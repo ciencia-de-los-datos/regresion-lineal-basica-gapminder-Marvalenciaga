@@ -20,8 +20,7 @@ def pregunta_01():
     # Asigne la columna "life" a `y` y la columna "fertility" a `X`
     y = df['life'].values
     X = df['fertility'].values
-    
-
+ 
     # Imprima las dimensiones de `y`
     print(y.shape)
 
@@ -45,12 +44,11 @@ def pregunta_02():
     En este punto se realiza la impresión de algunas estadísticas básicas
     Complete el código presentado a continuación.
     """
-
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
     df = pd.read_csv('gm_2008_region.csv', sep=0, header=0,)
 
     # Imprima las dimensiones del DataFrame
-    print(df.shape)
+    print(df.shape())
 
     # Imprima la correlación entre las columnas `life` y `fertility` con 4 decimales.
     print(df.corr().round(4)['fertility']['life'])
