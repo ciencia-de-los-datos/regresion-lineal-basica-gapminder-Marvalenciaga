@@ -5,8 +5,11 @@ Regresión Lineal Univariada
 En este laboratio se construirá un modelo de regresión lineal univariado.
 
 """
+from tkinter import X, Y
 import numpy as np
 import pandas as pd
+from sklearn import pipeline
+from sympy import Predicate
 
 def pregunta_01():
     """
@@ -21,10 +24,10 @@ def pregunta_01():
     X = df.fertility
 
     # Imprima las dimensiones de `y`
-    y.shape()
+    print(y.shape())
     
     # Imprima las dimensiones de `X`
-    X.shape()
+    print(X.shape())
 
     # Transforme `y` a un array de numpy usando reshape
     y_reshaped = y.reshape(-1,1)
@@ -45,7 +48,7 @@ def pregunta_02():
     """
 
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
-    df = ____
+    df = pd.read_csv("gm_2008_region.csv", sep=",")
 
     # Imprima las dimensiones del DataFrame
     print(____.____)
@@ -70,7 +73,7 @@ def pregunta_03():
     """
 
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
-    df = ____
+    df = pd.read_csv("gm_2008_region.csv", sep=",")
 
     # Asigne a la variable los valores de la columna `fertility`
     X_fertility = ____
@@ -79,20 +82,20 @@ def pregunta_03():
     y_life = ____
 
     # Importe LinearRegression
-    from ____ import ____
-
+    from sklearn.linear_model import LinearRegression
+    
     # Cree una instancia del modelo de regresión lineal
     reg = ____
 
     # Cree El espacio de predicción. Esto es, use linspace para crear
     # un vector con valores entre el máximo y el mínimo de X_fertility
-    prediction_space = ____(
+    prediction_space = LinearRegression(
         ____,
         ____,
-    ).reshape(____, _____)
+    ).reshape(y_life, X_fertility)
 
     # Entrene el modelo usando X_fertility y y_life
-    reg.fit(____, ____)
+    reg.fit(X_fertility, y_life)
 
     # Compute las predicciones para el espacio de predicción
     y_pred = reg.predict(prediction_space)
@@ -110,10 +113,13 @@ def pregunta_04():
     # Importe LinearRegression
     # Importe train_test_split
     # Importe mean_squared_error
-    from ____ import ____
-
+    
+    from sklearn.linear_model import LinearRegression
+    from sklearn.model_selection import train_test_split
+    from sklearn.metrics import mean_squared_error
+    
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
-    df = ____
+    df = pd.read_csv("gm_2008_region.csv", sep=",")
 
     # Asigne a la variable los valores de la columna `fertility`
     X_fertility = ____
@@ -123,21 +129,21 @@ def pregunta_04():
 
     # Divida los datos de entrenamiento y prueba. La semilla del generador de números
     # aleatorios es 53. El tamaño de la muestra de entrenamiento es del 80%
-    (X_train, X_test, y_train, y_test,) = ____(
-        ____,
-        ____,
-        test_size=____,
-        random_state=____,
+    (X_train, X_test, y_train, y_test,) = train_test_split(
+        X,
+        Y,
+        test_size=0.80,
+        random_state=53,
     )
 
     # Cree una instancia del modelo de regresión lineal
     linearRegression = ____
 
     # Entrene el clasificador usando X_train y y_train
-    ____.fit(____, ____)
+    pipeline.fit(X_train, y_train)
 
     # Pronostique y_test usando X_test
-    y_pred = ____
+    y_pred = pipeline.predict(X_test)
 
     # Compute and print R^2 and RMSE
     print("R^2: {:6.4f}".format(linearRegression.score(X_test, y_test)))
