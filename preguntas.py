@@ -14,7 +14,7 @@ def pregunta_01():
     Complete el código presentado a continuación.
     """
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
-    df = pd.read_csv("gm_2008_region.csv", sep=",", header=0)
+    df = pd.read_csv("gm_2008_region.csv", sep=",")
 
     # Asigne la columna "life" a `y` y la columna "fertility" a `X`
     y = df.lives
@@ -37,9 +37,6 @@ def pregunta_01():
 
     # Imprima las nuevas dimensiones de `X`
     print(df.ndim(X))
-
-print(pregunta_01())
-
 
 def pregunta_02():
     """
