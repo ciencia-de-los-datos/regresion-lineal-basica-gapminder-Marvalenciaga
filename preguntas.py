@@ -68,9 +68,8 @@ def pregunta_03():
     Entrenamiento del modelo sobre todo el conjunto de datos.
     Complete el código presentado a continuación.
     """
-
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
-    df = pd.read_csv('gm_2008_region.csv', sep=0, header=0,)
+    df = pd.read_csv('gm_2008_region.csv', sep = ',', header=0,)
 
     # Asigne a la variable los valores de la columna `fertility`
     X_fertility = df['fertility'].values.reshape(-1,1)
@@ -116,7 +115,7 @@ def pregunta_04():
     from sklearn.metrics import mean_squared_error
 
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
-    df = pd.read_csv('gm_2008_region.csv', sep=0, header=0)
+    df = pd.read_csv('gm_2008_region.csv', sep=",", header=0,)
 
     # Asigne a la variable los valores de la columna `fertility`
     X_fertility =  df['fertility'].values.reshape(-1,1)
@@ -132,7 +131,6 @@ def pregunta_04():
         test_size=0.2,
         random_state=53,
     )
-
     # Cree una instancia del modelo de regresión lineal
     linearRegression = LinearRegression()
 
