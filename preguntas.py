@@ -21,10 +21,10 @@ def pregunta_01():
     X = df.fertility
 
     # Imprima las dimensiones de `y`
-    print(y.shape())
+    y.shape()
     
     # Imprima las dimensiones de `X`
-    print(X.shape())
+    X.shape()
 
     # Transforme `y` a un array de numpy usando reshape
     y_reshaped = y.reshape(-1,1)
