@@ -60,7 +60,7 @@ def pregunta_02():
     print(type(df['fertility']))
 
     # # Imprima la correlación entre las columnas `GDP` y `life` con 4 decimales.
-    print(df.corr().round(4)['GDP']['life'])
+    print(df["fertility"].corr(df["life"]).round(4))
 
 def pregunta_03():
     """
