@@ -20,6 +20,7 @@ def pregunta_01():
     # Asigne la columna "life" a `y` y la columna "fertility" a `X`
     y = df['life'].values
     X = df['fertility'].values
+    
 
     # Imprima las dimensiones de `y`
     print(y.shape)
