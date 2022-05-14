@@ -17,26 +17,26 @@ def pregunta_01():
     df = pd.read_csv("gm_2008_region.csv", sep=",")
 
     # Asigne la columna "life" a `y` y la columna "fertility" a `X`
-    y = df.lives
+    y = df.life
     X = df.fertility
 
     # Imprima las dimensiones de `y`
-    print(df.ndim(y))
+    print(y.shape())
     
     # Imprima las dimensiones de `X`
-    print(df.ndim(X))
+    print(X.shape())
 
     # Transforme `y` a un array de numpy usando reshape
-    y_reshaped = y.reshape(np.array(y))
+    y_reshaped = y.reshape(-1,1)
 
     # Trasforme `X` a un array de numpy usando reshape
-    X_reshaped = X.reshape(np.array(X))
+    X_reshaped = X.reshape(-1,1)
 
     # Imprima las nuevas dimensiones de `y`
-    print(df.ndim(y))
+    print(y.shape())
 
     # Imprima las nuevas dimensiones de `X`
-    print(df.ndim(X))
+    print(X.shape())
 
 def pregunta_02():
     """
