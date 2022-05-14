@@ -15,7 +15,7 @@ def pregunta_01():
     Complete el código presentado a continuación.
     """
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
-    df = pd.read_csv('gm_2008_region.csv')
+    df = pd.read_csv('gm_2008_region.csv', sep=",", header=0,)
 
     # Asigne la columna "life" a `y` y la columna "fertility" a `X`
     y = df['life'].values
@@ -46,7 +46,7 @@ def pregunta_02():
     """
 
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
-    df = pd.read_csv('gm_2008_region.csv')
+    df = pd.read_csv('gm_2008_region.csv', sep=0, header=0,)
 
     # Imprima las dimensiones del DataFrame
     print(df.shape)
@@ -70,7 +70,7 @@ def pregunta_03():
     """
 
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
-    df = pd.read_csv('gm_2008_region.csv')
+    df = pd.read_csv('gm_2008_region.csv', sep=0, header=0,)
 
     # Asigne a la variable los valores de la columna `fertility`
     X_fertility = df['fertility'].values.reshape(-1,1)
@@ -110,12 +110,13 @@ def pregunta_04():
     # Importe LinearRegression
     # Importe train_test_split
     # Importe mean_squared_error
+    
     from sklearn.linear_model import LinearRegression
     from sklearn.model_selection import train_test_split
     from sklearn.metrics import mean_squared_error
 
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
-    df = pd.read_csv('gm_2008_region.csv')
+    df = pd.read_csv('gm_2008_region.csv', sep=0, header=0)
 
     # Asigne a la variable los valores de la columna `fertility`
     X_fertility =  df['fertility'].values.reshape(-1,1)
