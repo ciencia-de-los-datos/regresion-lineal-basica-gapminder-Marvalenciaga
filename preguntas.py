@@ -44,23 +44,24 @@ def pregunta_02():
     En este punto se realiza la impresión de algunas estadísticas básicas
     Complete el código presentado a continuación.
     """
+
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
-    df = pd.read_csv('gm_2008_region.csv', sep=0, header=0,)
+    df = pd.read_csv('gm_2008_region.csv', sep = ',', header=0,)
 
     # Imprima las dimensiones del DataFrame
-    print(df.shape())
+    print(df.shape)
 
     # Imprima la correlación entre las columnas `life` y `fertility` con 4 decimales.
-    print(df["fertility"].corr(df["life"]).round(4))
+    print(df['life'].corr(df['fertility']).round(4))
 
-    # # Imprima la media de la columna `life` con 4 decimales.
-    print((df["life"]).mean().round())
+    # Imprima la media de la columna `life` con 4 decimales.
+    print((df['life'].mean()).round(4))
 
-    # # Imprima el tipo de dato de la columna `fertility`.
+    # Imprima el tipo de dato de la columna `fertility`.
     print(type(df['fertility']))
 
-    # # Imprima la correlación entre las columnas `GDP` y `life` con 4 decimales.
-    print(df.corr().round(4)['GDP']['life'])
+    # Imprima la correlación entre las columnas `GDP` y `life` con 4 decimales.
+    print(df['GDP'].corr(df['life']).round(4))
 
 def pregunta_03():
     """
